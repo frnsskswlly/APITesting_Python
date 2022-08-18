@@ -13,58 +13,54 @@ def buku_api():
 
 
 def test_get_all_data_buku_seller(buku_api):
-	# response = buku_api.get_all_seller()
-	# data = response.json()
-	# code = response.status_code
+	response = buku_api.get_all_seller()
+	data = response.json()
+	code = response.status_code
 
-	#checking the json result
-	# assert_that(code).is_equal_to(201)
-	# assert_that(data["data"]).is_not_empty()
-	pass
+	# checking the json result
+	assert_that(code).is_equal_to(201)
+	assert_that(data["data"]).is_not_empty()
+
 
 
 def test_tambah_buku(buku_api):
-
-	#from-data input, need to set the filename:none to avoid content-disposition error
-	# payload = {
-	# 	"nama": (None, "Bola: Edisi Chelsea"),
-	# 	"deskripsi": (None, "Edisi khusus tentang tim bola Chelsea"),
-	# 	"gambar": (None, ""),
-	# 	"harga": (None, 325000),
-	# 	"pengarang": (None, "Bola"),
-	# 	"lokasi": (None, "Jakarta"),
-	# 	"tahun_terbit": (None, "2022"),
-	# 	"kategori_id": (None, 17)
-	# }
+	# from-data input, need to set the filename:none to avoid content-disposition error
+	payload = {
+		"nama": (None, "Bola: Edisi Chelsea"),
+		"deskripsi": (None, "Edisi khusus tentang tim bola Chelsea"),
+		"gambar": (None, ""),
+		"harga": (None, 325000),
+		"pengarang": (None, "Bola"),
+		"lokasi": (None, "Jakarta"),
+		"tahun_terbit": (None, "2022"),
+		"kategori_id": (None, 17)
+	}
 	
-	# response = buku_api.create(payload)
-	# code = response.status_code
-	# data = response.json()
+	response = buku_api.create(payload)
+	code = response.status_code
+	data = response.json()
 
-	# assert_that(code).is_equal_to(201)
-	# assert_that(data["nama"]).is_equal_to("Bola: Edisi Chelsea")
-	pass
+	assert_that(code).is_equal_to(201)
+	assert_that(data["nama"]).is_equal_to("Bola: Edisi Chelsea")
 
 def test_delete_buku(buku_api):
-	# id = 12
+	id = 12
 
-	# response = buku_api.destroy(id)
-	# data = response.json()
-	# code = response.status_code
+	response = buku_api.destroy(id)
+	data = response.json()
+	code = response.status_code
 
-	# assert_that(code).is_equal_to(201)
-	# assert_that(data["msg"]).is_equal_to("")
-	pass
+	assert_that(code).is_equal_to(201)
+	assert_that(data["msg"]).is_equal_to("")
 
 def test_get_all_buku(buku_api):
-	# response = buku_api.get_all()
-	# data = response.json()
-	# code = response.status_code
+	response = buku_api.get_all()
+	data = response.json()
+	code = response.status_code
 
-	#checking the json result
-	# assert_that(code).is_equal_to(201)
-	# assert_that(data["data"]).is_not_empty()
-	pass
+	# checking the json result
+	assert_that(code).is_equal_to(201)
+	assert_that(data["data"]).is_not_empty()
 
 
 def test_search_data_buku(buku_api):
